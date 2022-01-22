@@ -12,7 +12,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         anim = this.gameObject.GetComponent<Animation>(); // 제너릭 타입(Generic Type)
-        // anim = GetComponent("Animation") as Animation;
+        anim.Play("Idle");
     }
 
     void Update()

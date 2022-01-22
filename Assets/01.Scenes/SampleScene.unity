@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  anim: {fileID: 0}
 --- !u!1001 &1490099453
 PrefabInstance:
   m_ObjectHideFlags: 0
