@@ -25,6 +25,9 @@ public class PlayerCtrl : MonoBehaviour
         // 벡터의 정규화 {벡터}.normalized
         transform.Translate(dir.normalized * 0.1f);
 
+        Debug.Log("dir=" + dir.magnitude);                          //정규화 이전벡터 (1.4142)
+        Debug.Log("normalized dir=" + dir.normalized.magnitude);    //정규화 벡터    (1)
+
         // transform.Translate(Vector3.forward * 0.1f * v);    // 전/후진
         // transform.Translate(Vector3.right * 0.1f * h);      // 좌/우
     }
