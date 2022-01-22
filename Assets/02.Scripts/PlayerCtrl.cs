@@ -17,7 +17,8 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("v=" + v); // print("v="+v);
 
         //transform.position += new Vector3(0, 0, 0.1f);
-        transform.Translate(Vector3.forward * 0.1f);
+        //transform.Translate(방향 * 속도 * 변위)
+        transform.Translate(Vector3.forward * 0.1f * v);
 
     }
 
