@@ -12,5 +12,6 @@ public class PlayerCtrl : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, 0, 0.1f);
+        // transform.position = transform.position + new Vector3(0, 0, 0.1f);
     }
 }
