@@ -7,10 +7,12 @@ public class PlayerCtrl : MonoBehaviour
     private float h, v, r;
 
     public float speed = 20.0f;
+    public Animation anim;
 
     void Start()
     {
-
+        anim = this.gameObject.GetComponent<Animation>(); // 제너릭 타입(Generic Type)
+        // anim = GetComponent("Animation") as Animation;
     }
 
     void Update()
