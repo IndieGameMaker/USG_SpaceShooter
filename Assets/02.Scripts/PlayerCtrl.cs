@@ -6,7 +6,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     private float h, v, r;
 
-    public float speed = 8.0f;
+    public float speed = 20.0f;
 
     void Start()
     {
@@ -17,8 +17,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         v = Input.GetAxis("Vertical");  // -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal");// -1.0f ~ 0.0f ~ +1.0f
-
-        //Debug.Log("v=" + v); // print("v="+v);
+        r = Input.GetAxis("Mouse X");
 
         //transform.Translate(방향 * 속도 * 변위)
         // 방향벡터 = (전후진벡터) + (좌우벡터)
@@ -27,11 +26,8 @@ public class PlayerCtrl : MonoBehaviour
         // 벡터의 정규화 {벡터}.normalized
         transform.Translate(dir.normalized * Time.deltaTime * speed);
 
-        // Debug.Log("dir=" + dir.magnitude);                          //정규화 이전벡터 (1.4142)
-        // Debug.Log("normalized dir=" + dir.normalized.magnitude);    //정규화 벡터    (1)
-
-        // transform.Translate(Vector3.forward * 0.1f * v);    // 전/후진
-        // transform.Translate(Vector3.right * 0.1f * h);      // 좌/우
+        // 회전로직
+        transform.Rotate(Vector3.up * 50.0f * Time.deltaTime * r);
     }
 
     /*
