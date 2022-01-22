@@ -19,8 +19,13 @@ public class PlayerCtrl : MonoBehaviour
         //Debug.Log("v=" + v); // print("v="+v);
 
         //transform.Translate(방향 * 속도 * 변위)
-        transform.Translate(Vector3.forward * 0.1f * v);    // 전/후진
-        transform.Translate(Vector3.right * 0.1f * h);      // 좌/우
+        // 방향벡터 = (전후진벡터) + (좌우벡터)
+        Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
+
+        transform.Translate(dir * 0.1f);
+
+        // transform.Translate(Vector3.forward * 0.1f * v);    // 전/후진
+        // transform.Translate(Vector3.right * 0.1f * h);      // 좌/우
     }
 
     /*
