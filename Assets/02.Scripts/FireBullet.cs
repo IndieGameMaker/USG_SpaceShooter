@@ -22,6 +22,8 @@ public class FireBullet : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        // {컴포넌트}.enabled = true/false;
+        muzzleFlash.enabled = false;
     }
 
     void Update()
