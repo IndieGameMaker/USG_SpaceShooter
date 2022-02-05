@@ -30,6 +30,9 @@ public class MonsterCtrl : MonoBehaviour
     {
         // 몬스터와 주인공간의 거리를 계산
         float distance = Vector3.Distance(playerTr.position, monsterTr.position);
+
+        Debug.Log(distance);
+
         // 추적사정거리 범위여부를 판단
         if (distance <= traceDist)
         {
