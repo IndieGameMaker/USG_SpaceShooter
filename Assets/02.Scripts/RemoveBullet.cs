@@ -13,6 +13,18 @@ public class RemoveBullet : MonoBehaviour
             Destroy(coll.gameObject);
 
             // 스파크 발생(스파크 Instantiate)
+            // Instantiate(객체, 좌표, 회전)
+            // 충돌지점 산출
+            ContactPoint cp = coll.GetContact(0);
+            // 충돌 좌표
+            Vector3 pos = cp.point;
+            // 충돌 좌표기준으로의 법선벡터
+            Vector3 contactNormal = -cp.normal;
+            // 벡터가 바로보는 각도를 쿼터니언(Quaternion) 타입으로 변환
+            Quaternion rot = Quaternion.LookRotation(contactNormal);
+
+            // 스파크 생성
+            Instantiate(sparkEffect, pos, rot);
         }
     }
 }
