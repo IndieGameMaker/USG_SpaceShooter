@@ -39,11 +39,15 @@ public class MonsterCtrl : MonoBehaviour
             agent.SetDestination(playerTr.position);
             // 추적 시작
             agent.isStopped = false;
+            // 애니메이션 변경 Idle -> Walk : IsTrace = true
+            anim.SetBool("IsTrace", true);
         }
         else
         {
             // 추적 정지
             agent.isStopped = true;
+            // Walk -> Idle : IsTrace = false;
+            anim.SetBool("IsTrace", false);
         }
     }
 }
