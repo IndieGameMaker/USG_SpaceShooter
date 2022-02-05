@@ -65,6 +65,9 @@ public class FireBullet : MonoBehaviour
         // {컴포넌트}.tranform
         muzzleFlash.transform.localRotation = Quaternion.Euler(0, 0, angle);
 
+        // 불규칙한 스케일 적용
+        float scale = Random.Range(1.0f, 3.0f);
+        muzzleFlash.transform.localScale = Vector3.one * scale; // new Vector3(scale, scale, scale)
 
         muzzleFlash.enabled = true;
 
