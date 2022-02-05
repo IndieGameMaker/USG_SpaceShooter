@@ -9,6 +9,16 @@ public class FireBullet : MonoBehaviour
     // 총알 프리팹
     public GameObject bulletPrefab;
 
+    // 총 발사 음원(AudioClip)
+    public AudioClip fireSfx;
+    // 오디오소스 컴포넌트
+    public AudioSource audio;
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         // 마우스 왼쪽 버튼을 클릭 할 때 마다
@@ -20,3 +30,10 @@ public class FireBullet : MonoBehaviour
         }
     }
 }
+
+
+/*
+    AudioListener  - 1
+
+    AudioSource  - 소리를 발생시키는 역할 - n
+*/
