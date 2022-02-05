@@ -50,6 +50,22 @@ public class FireBullet : MonoBehaviour
 
     IEnumerator ShowMuzzleFlash()
     {
+        // 회전처리
+        /*
+            난수 발생 (Random)
+
+            Random.Range(min, max)
+
+            난수 발생 범위
+            1. Integer  ex)  Random.Range(0, 10)       ---> 0 ~ 9
+            2. Float    ex)  Random.Range(0.0f, 10.0f) ---> 0.0f ~ 10.0f
+        */
+        // 불규칙한 각도를 산출
+        float angle = Random.Range(0, 360);
+        // {컴포넌트}.tranform
+        muzzleFlash.transform.localRotation = Quaternion.Euler(0, 0, angle);
+
+
         muzzleFlash.enabled = true;
 
         yield return new WaitForSeconds(0.3f);
@@ -67,5 +83,25 @@ public class FireBullet : MonoBehaviour
 
 /*
     코루틴 (Co-routine)
+*/
+
+/*
+    쿼터니언 (Quaternion) : 사원수 (x, y, z, w) : 복소수 4차원 벡터
+
+    Quaternion.LookRotation (Vector3)
+    Quaternion.Euler(x, y, z);
+
+    오일러각(0, 360) : 오일러 회전 (x -> y -> z)
+    Gimbal Lock(짐벌락, 김벌락)
+
+
+
+
+
+
+
+
+
+
 
 */
