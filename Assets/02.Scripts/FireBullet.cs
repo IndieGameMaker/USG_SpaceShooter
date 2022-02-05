@@ -69,6 +69,12 @@ public class FireBullet : MonoBehaviour
         float scale = Random.Range(1.0f, 3.0f);
         muzzleFlash.transform.localScale = Vector3.one * scale; // new Vector3(scale, scale, scale)
 
+        // 불규칙한 텍스처 Offset 적용
+        // (0,0) (0.5, 0) (0, 0.5) (0.5, 0.5)
+        // (0, 1) * 0.5 => (0, 0.5f)
+        Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+        muzzleFlash.material.mainTextureOffset = offset;
+
         muzzleFlash.enabled = true;
 
         yield return new WaitForSeconds(0.3f);
