@@ -16,9 +16,12 @@ public class FireBullet : MonoBehaviour
     // 오디오소스 컴포넌트
     public AudioSource audio;
 
+    public MeshRenderer muzzleFlash;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
     }
 
     void Update()
