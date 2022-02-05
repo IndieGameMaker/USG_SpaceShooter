@@ -14,7 +14,7 @@ public class FireBullet : MonoBehaviour
 
     [System.NonSerialized]
     // 오디오소스 컴포넌트
-    public AudioSource audio;
+    public new AudioSource audio;
 
     public MeshRenderer muzzleFlash;
 
@@ -42,7 +42,19 @@ public class FireBullet : MonoBehaviour
 
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
+
+            // 총구화염 효과
+            StartCoroutine(ShowMuzzleFlash()); //StartCoroutine("ShowMuzzleFlash");
         }
+    }
+
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+
+        yield return new WaitForSeconds(0.3f);
+
+        muzzleFlash.enabled = false;
     }
 }
 
@@ -51,4 +63,9 @@ public class FireBullet : MonoBehaviour
     AudioListener  - 1
 
     AudioSource  - 소리를 발생시키는 역할 - n
+*/
+
+/*
+    코루틴 (Co-routine)
+
 */
