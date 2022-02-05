@@ -25,7 +25,7 @@ public class PlayerCtrl : MonoBehaviour
         r = Input.GetAxis("Mouse X");
 
         //transform.Translate(방향 * 속도 * 변위)
-        // 방향벡터 = (전후진벡터) + (좌우벡터)
+        // 방향벡터 = (전후진벡터) + (좌우벡터) //
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
 
         // 벡터의 정규화 {벡터}.normalized
