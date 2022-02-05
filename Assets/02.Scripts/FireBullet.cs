@@ -102,15 +102,17 @@ public class FireBullet : MonoBehaviour
 
     오일러각(0, 360) : 오일러 회전 (x -> y -> z)
     Gimbal Lock(짐벌락, 김벌락)
+*/
 
+/*
+    Animation Type
 
+    Code
+    1. Legacy
 
-
-
-
-
-
-
+    Visual Editor (Node)
+    2. Mecanim - Generic
+               - Humanoid  : Retargetting, Bipadal Model(2족 보행하는 캐릭터, 15 Born)
 
 
 */
