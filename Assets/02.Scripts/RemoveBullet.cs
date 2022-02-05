@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    public GameObject sparkEffect;
+
     void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.tag == "BULLET")
         {
             Destroy(coll.gameObject);
+
+            // 스파크 발생(스파크 Instantiate)
         }
     }
 }
